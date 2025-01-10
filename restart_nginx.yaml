@@ -1,6 +1,7 @@
 ---
 - name: Restart Nginx on AWS EC2 instances
-  hosts: ec2-54-164-99-156.compute-1.amazonaws.com
+  hosts: 
+    - ec2-54-164-99-156.compute-1.amazonaws.com
   become: true
   tasks:
     - name: Restart Nginx service
