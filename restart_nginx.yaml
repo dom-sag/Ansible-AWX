@@ -1,0 +1,9 @@
+---
+- name: Restart Nginx on AWS EC2 instances
+  hosts: tag_Role_nginx
+  become: true
+  tasks:
+    - name: Restart Nginx service
+      ansible.builtin.systemd:
+        name: nginx
+        state: restarted
