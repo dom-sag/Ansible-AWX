@@ -1,7 +1,6 @@
 ---
 - name: Restart Nginx on AWS EC2 instances
-  hosts: 
-     - ec2-98-81-122-109.compute-1.amazonaws.com
+  hosts: public_dns_name
   user: ubuntu
   become: true
   tasks:
