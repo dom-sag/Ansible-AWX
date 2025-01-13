@@ -1,0 +1,16 @@
+---
+plugin: amazon.aws.aws_ec2
+aws_profile: default
+regions:
+  - us-east-1  # Update with your AWS region
+filters:
+  tag:name: nginx
+include_filters:
+  - tag:Name:
+      - 'ubuntu'
+      - 'hostname'
+keyed_groups:
+  - prefix: arch
+    key: architecture
+groups:
+  ubuntu: "'ubuntu' in tag.OS"
