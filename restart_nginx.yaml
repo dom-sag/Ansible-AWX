@@ -4,7 +4,7 @@
   user: ubuntu
   become: true
   tasks:
-    - name: Start Nginx service
+    - name: Stop Nginx service
       ansible.builtin.systemd:
         name: nginx
-        state: started
+        state: stopped
