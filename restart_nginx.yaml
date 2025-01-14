@@ -4,20 +4,14 @@
   user: ubuntu
   become: true
   tasks:
-    - name: Stop Nginx service
-      ansible.builtin.systemd:
-        name: nginx
-        state: stopped
-    - name: Start Nginx Service
-      ansible.builtin.systemd:
-         name: nginx
-         state: started
-
-    - name: create a directory
-      ansible.builtin.file:
-        path: /opt/dev
-        mode: 0644
-        owner: ubuntu
-        group: ubuntu
-        state: directory
+    - name: Touch files with an optional mode
+  ansible.builtin.file:
+    dest: "{{ item.path }}"
+    state: touch
+    mode: "{{ item.mode | default(omit) }}"
+  loop:
+    - path: /tmp/foo
+    - path: /tmp/bar
+    - path: /tmp/baz
+      mode: "0444"
       
