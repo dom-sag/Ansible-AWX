@@ -5,13 +5,13 @@
   become: true
   tasks:
     - name: Touch files with an optional mode
-  ansible.builtin.file:
-    dest: "{{ item.path }}"
-    state: touch
-    mode: "{{ item.mode | default(omit) }}"
-  loop:
-    - path: /tmp/foo
-    - path: /tmp/bar
-    - path: /tmp/baz
-      mode: "0444"
+      ansible.builtin.file:
+        dest: "{{ item.path }}"
+        state: touch
+        mode: "{{ item.mode | default(omit) }}"
+      loop:
+        - path: /tmp/foo
+        - path: /tmp/bar
+        - path: /tmp/baz
+          mode: "0444"
       
