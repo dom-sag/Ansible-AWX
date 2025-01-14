@@ -15,8 +15,9 @@
 
     - name: create a directory
       ansible.builtin.file:
-      path: /opt/dev
-      owner: ubuntu
-      group: ubuntu
-      state: directory
+        path: /opt/dev
+        mode: 0644
+        owner: ubuntu
+        group: ubuntu
+        state: directory
       
