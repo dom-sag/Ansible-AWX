@@ -8,3 +8,15 @@
       ansible.builtin.systemd:
         name: nginx
         state: stopped
+    - name: Start Nginx Service
+      ansible.builtin.systemd:
+         name: nginx
+         state: started
+
+    - name: create a directory
+      ansible.builtin.file:
+      path: /opt/dev
+      owner: ubuntu
+      group: ubuntu
+      state: directory
+      
