@@ -1,6 +1,6 @@
 ---
 - name: Restart Nginx on AWS EC2 instances
-  hosts: tag_nginx
+  hosts: tag_private_ip_address
   tasks:
     - name: ping ec2
       ansible.builtin.ping:
