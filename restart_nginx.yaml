@@ -1,17 +1,7 @@
 ---
 - name: Restart Nginx on AWS EC2 instances
-  hosts: all
-  user: ubuntu
-  become: true
+  hosts: tag_nginx
   tasks:
-    - name: Touch files with an optional mode
-      ansible.builtin.file:
-        dest: "{{ item.path }}"
-        state: touch
-        mode: "{{ item.mode | default(omit) }}"
-      loop:
-        - path: /tmp/foo
-        - path: /tmp/bar
-        - path: /tmp/baz
-          mode: "0444"
+    - name: ping ec2
+      ansible.builtin.ping:
       
