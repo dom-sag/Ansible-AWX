@@ -15,11 +15,13 @@ pipeline {
         stage ('stage 2') {
             steps {
                 sh 'echo $AAA_RANDOM_VAR'
+                sh 'env | sort'
             }
         }
         stage ('step 3') {
            steps {
             sh 'echo $AAA_SECRET_ID'
+            sh 'env | sort'
            }
 
     }
