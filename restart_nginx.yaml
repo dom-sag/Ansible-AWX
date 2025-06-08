@@ -1,7 +1,0 @@
----
-- name: Restart Nginx on AWS EC2 instances
-  hosts: all
-  tasks:
-    - name: ping ec2
-      ansible.builtin.ping:
-      
