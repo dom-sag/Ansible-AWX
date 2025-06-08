@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    environment {
+
+        AAA_TOP_LEVEL_VAR = 'toplevel'
+    }
+
+    stages {
+        stage ('stage 1') {
+            steps {
+                sh 'echo $AAA_TOP_LEVEL_VAR'
+                sh 'env | sort'
+            }
+        }
+        stage ('stage 2') {
+            steps {
+                sh 'echo $RANDOM_VAR'
+            }
+        }
+    }
+}
