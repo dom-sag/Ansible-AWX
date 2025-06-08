@@ -14,12 +14,12 @@ pipeline {
         }
         stage ('stage 2') {
             steps {
-                sh 'echo $RANDOM_VAR'
+                sh 'echo $AAA_RANDOM_VAR'
             }
         }
         stage ('step 3') {
            steps {
-            sh 'echo $secret_id'
+            sh 'echo $AAA_SECRET_ID'
            }
 
     }
