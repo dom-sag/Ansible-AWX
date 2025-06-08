@@ -17,5 +17,11 @@ pipeline {
                 sh 'echo $RANDOM_VAR'
             }
         }
+        stage ('step 3') {
+           steps {
+            sh 'echo $secret_id'
+           }
+
     }
+}
 }
